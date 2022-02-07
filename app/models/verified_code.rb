@@ -1,0 +1,2 @@
+class VerifiedCode < ApplicationRecord
+end

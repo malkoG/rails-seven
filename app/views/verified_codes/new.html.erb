@@ -1,0 +1,60 @@
+<%= form_for(@petition, html: { class: "block space-y-4" }) do |f| %>
+
+  <div class="space-y-2">
+    <div class="grid grid-cols-2 gap-6">
+      <div class="space-y-2">
+        <label for="petition_name" class="block text-sm font-semibold text-gray-700">이름</label>
+        <%= f.text_field :name, class: "w-full border-gray-300 rounded-md text-sm" %>
+      </div>
+      <div class="space-y-2">
+        <label for="petition_birthday" class="block text-sm font-semibold text-gray-700">생년월일</label>
+        <%= f.text_field :birthday, class: "w-full border-gray-300 rounded-md text-sm" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <label for="petition_email" class="block text-sm font-semibold text-gray-700">Email</label>
+    <%= f.text_field :email, class: "w-full border-gray-300 rounded-md text-sm" %>
+  </div>
+  <div class='verifying_part space-y-2'>
+    <%= turbo_frame_tag 'petition_form', class: "space-y-2" do %>
+      <div class="space-y-2">
+        <label for="petition_phone" class="block text-sm font-semibold text-gray-700">전화번호</label>
+        <div class="grid grid-cols-2 gap-6"
+          data-controller="verified-code"
+          data-verified-code-create-url-value="<%= verified_codes_path %>"
+          data-verified-code-new-url-value="<%= new_verified_code_path %>">
+          <div class="space-y-2">
+            <%= f.text_field :phone, "data-verified-code-target": "number", class: "w-full border-gray-300 rounded-md text-sm" %>
+          </div>
+          <div class="space-y-2" >
+            <%=
+              link_to "재인증", '#',
+              "data-action": "click->verified-code#verify",
+              class: "flex items-center justify-center w-full px-4 py-3 text-sm font-semibold leading-4 text-center transition-colors duration-300 bg-blue-600 rounded-md hover:bg-blue-700 text-blue-50"
+            %>
+            <%=
+              link_to "인증번호 받기", new_verified_code_path(a: 1),
+              :style => "display:none;",
+              :data => { "verified-code-target" => 'newlink' }
+            %>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="space-y-2">
+          <label for="petition_code" class="block text-sm font-semibold text-gray-700">인증번호</label>
+          <%= f.text_field :code, class: "w-full border-gray-300 rounded-md text-sm" %>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <button class="flex items-center justify-center w-full px-4 py-4 space-x-1 text-sm font-semibold leading-4 text-center transition-colors duration-300 bg-blue-600 rounded-md hover:bg-blue-700 text-blue-50">
+          <span>
+            서명
+          </span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+<% end %>

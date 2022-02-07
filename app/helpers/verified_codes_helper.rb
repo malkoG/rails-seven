@@ -1,0 +1,2 @@
+module VerifiedCodesHelper
+end

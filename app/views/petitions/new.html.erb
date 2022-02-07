@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register - Plain | AirControl by themes.dev</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Accept-CH" content="DPR,Width,Viewport-Width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="h-screen font-sans antialiased text-gray-700">
+    <main
+  class="flex flex-row items-center justify-center min-h-screen px-4 py-6 pt-12 bg-white">
+      <div class="relative z-10 flex justify-center flex-1 pb-12">
+        <div class="w-full max-w-xl">
+          <div class="px-8 py-4 lg:px-12 lg:py-12">
+            <%= render 'form' %>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
