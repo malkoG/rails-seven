@@ -10,9 +10,11 @@ class PetitionsController < ApplicationController
     phone = @petition.phone
     code = @petition.code
     service = VerifiedCodeService.new(phone)
-    pp "@@@"
-    pp service.verifying(code)
-    pp "@@@"
+   
+    if service.verifying(code)
+      @petition.save
+    end
+    redirect_to(petitions_path)
   end
 
   def index
