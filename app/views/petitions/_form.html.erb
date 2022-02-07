@@ -35,7 +35,7 @@
               class: "flex items-center justify-center w-full px-4 py-3 text-sm font-semibold leading-4 text-center transition-colors duration-300 bg-blue-600 rounded-md hover:bg-blue-700 text-blue-50"
             %>
             <%=
-              link_to "인증번호 받기", new_verified_code_path(a: 1),
+              link_to "인증번호 받기", new_verified_code_path(),
               :style => "display:none;",
               :data => { "verified-code-target" => 'newlink' }
             %>
