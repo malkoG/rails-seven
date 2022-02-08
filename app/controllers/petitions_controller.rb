@@ -18,6 +18,7 @@ class PetitionsController < ApplicationController
   end
 
   def index
+    @petitions=Petition.all
   end
 
   def edit

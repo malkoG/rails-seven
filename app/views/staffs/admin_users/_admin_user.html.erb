@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <div class="ui checkbox">
+      <input type="checkbox" class="admin_userCheck" id="<%= admin_user.id %>" value="<%= admin_user.id %>">
+    </div>
+  </td>
+  <% @column_attributes.each do |column| %>
+    <td><%= admin_user[column] %></td>
+  <% end %>
+  <td>
+    <%= link_to '보기', staffs_admin_user_path(admin_user.id), method: :get %>
+    <%= link_to '수정', edit_staffs_admin_user_path(admin_user.id), method: :get %>
+    <%= link_to '삭제', staffs_admin_user_path(admin_user.id), method: :delete %>
+  </td>
+</tr>
+
+<script type="text/javascript">
+  $('.ui.checkbox')
+    .checkbox()
+  ;
+</script>

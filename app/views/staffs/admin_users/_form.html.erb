@@ -1,0 +1,47 @@
+<% url, method = staffs_admin_users_path, :post  %>
+<% url, method = staffs_admin_user_path(@admin_user), :put if action_name == 'edit' %>
+
+
+<%= form_for(@admin_user, url: url) do |f| %>
+<table class="ui striped celled table">
+  <tbody>
+
+      <tr>
+        <td class="two wide">
+          email
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :email %>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="two wide">
+          password
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :password %>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="two wide">
+          password 확인
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :password_confirmation %>
+          </div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<span class="ui" style="float: right;">
+  <button class="ui button" type="submit">등록</button>
+</span>
+<% end %>

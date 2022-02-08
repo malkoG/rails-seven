@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" class="is-web">
+  <head>
+    <meta charset="utf-8"/>
+    <title><%= yield(:title) %></title>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+    <meta name="robots" content="noindex">
+    <%= csrf_meta_tags %>
+    <%= javascript_importmap_tags %>
+    <%= yield :controller_js %>
+
+    <style>
+      .pagination a, .pagination span.current, .pagination span.gap {
+        float: left;
+        padding: 0 14px;
+        line-height: 38px;
+        text-decoration: none;
+        background-color: white;
+        border: 1px solid #DDD;
+        border-left-width: 0;
+      }
+
+      .pagination {
+        border-left: 1px solid #ddd;
+      }
+
+      .first{
+        padding: 0;
+        float: none;
+        border: none;
+      }
+      .prev {
+        padding: 0;
+        float: none;
+        border: none;
+      }
+      .page{
+        padding: 0;
+        float: none;
+        border: none;
+      }
+      .next{
+        padding: 0;
+        float: none;
+        border: none;
+      }
+      .last{
+        padding: 0;
+        float: none;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <% if notice.present? %>
+      <p class="flash_notice flash_alert"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="flash_alert"><%= alert %></p>
+    <% end %>
+    <%= render header_helper %>
+    <div>
+      <%= yield %>
+    </div>
+   </body>
+</html>
