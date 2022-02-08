@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admin_users
-  get 'welcome/index'
-  root "welcome#index"
+  root "petitions#index"
   resources :petitions
   resources :verified_codes
 
@@ -12,5 +11,4 @@ Rails.application.routes.draw do
     extend StaffsRoutes
   end
   devise_for :admin_users, admin_options
-
 end
