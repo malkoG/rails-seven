@@ -1,5 +1,11 @@
 <%= form_for(@petition, html: { class: "block space-y-4" }) do |f| %>
-
+  <% if flash.present? %>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
   <div class="space-y-2">
     <div class="grid grid-cols-2 gap-6">
       <div class="space-y-2">

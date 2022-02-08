@@ -10,11 +10,19 @@ class PetitionsController < ApplicationController
     phone = @petition.phone
     code = @petition.code
     service = VerifiedCodeService.new(phone)
-   
-    if service.verifying(code)
-      @petition.save
+
+    if service.verifying(code) == false
+      flash[:error] = "인증번호를 확인해주세요"
+      redirect_to(new_petition_path) and return
     end
-    redirect_to(petitions_path)
+
+    if @petition.save
+      redirect_to(petitions_path)
+    else
+      flash[:error] = @petition.errors.full_messages.join(", ")
+      redirect_to(new_petition_path)
+    end
+
   end
 
   def index
