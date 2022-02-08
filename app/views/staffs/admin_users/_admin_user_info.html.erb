@@ -1,0 +1,11 @@
+<% column_list = [:created_at, :updated_at, :id] %>
+<table class="ui striped celled table">
+  <tbody>
+    <% column_list.each do |column| %>
+      <tr>
+        <td class="three wide"><%= t(column, scope: [:activerecord, :admin_users]) %></td>
+        <td><%= admin_user[column] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

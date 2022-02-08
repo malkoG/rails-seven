@@ -1,0 +1,17 @@
+<% content_for :title, "admin_user | PETNER" %>
+
+<div class="main" style="padding: 3rem;">
+  <div class="ui">
+    <h1 class="ui teal image header">admin_users</h1>
+    <span class="ui" style="float: right;">
+      <%= link_to 'admin_user 추가', new_staffs_admin_user_path, class: "ui button" %>
+    </span>
+  </div>
+
+  <%= render 'filter', counts: @counts %>
+
+  <%= render 'admin_users', admin_users: @admin_users %>
+
+  <%= paginate @admin_users %>
+
+</div>
