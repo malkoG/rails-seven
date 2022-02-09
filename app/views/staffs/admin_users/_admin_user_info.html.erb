@@ -1,11 +1,53 @@
-<% column_list = [:created_at, :updated_at, :id] %>
+<% column_list = ["id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at"] %>
 <table class="ui striped celled table">
   <tbody>
-    <% column_list.each do |column| %>
-      <tr>
-        <td class="three wide"><%= t(column, scope: [:activerecord, :admin_users]) %></td>
-        <td><%= admin_user[column] %></td>
-      </tr>
-    <% end %>
+  <tr>
+    <td class="three wide">id</td>
+    <td>
+      <p><%= admin_user.id %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">email</td>
+    <td>
+      <p><%= admin_user.email %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">encrypted_password</td>
+    <td>
+      <p><%= admin_user.encrypted_password %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">reset_password_token</td>
+    <td>
+      <p><%= admin_user.reset_password_token %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">reset_password_sent_at</td>
+    <td>
+      <p><%= l(admin_user.reset_password_sent_at, format: :short) %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">remember_created_at</td>
+    <td>
+      <p><%= l(admin_user.remember_created_at, format: :short) %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">created_at</td>
+    <td>
+      <p><%= l(admin_user.created_at, format: :short) %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">updated_at</td>
+    <td>
+      <p><%= l(admin_user.updated_at, format: :short) %></p>
+    </td>
+  </tr>
   </tbody>
 </table>

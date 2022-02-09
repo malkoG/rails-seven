@@ -5,7 +5,18 @@
 <%= form_for(@admin_user, url: url) do |f| %>
 <table class="ui striped celled table">
   <tbody>
-
+    
+      <tr>
+        <td class="two wide">
+          id
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :id %>
+          </div>
+        </td>
+      </tr>
+    
       <tr>
         <td class="two wide">
           email
@@ -16,28 +27,73 @@
           </div>
         </td>
       </tr>
-
+    
       <tr>
         <td class="two wide">
-          password
+          encrypted_password
         </td>
         <td>
           <div class="ui input">
-            <%= f.text_field :password %>
+            <%= f.text_field :encrypted_password %>
           </div>
         </td>
       </tr>
-
+    
       <tr>
         <td class="two wide">
-          password 확인
+          reset_password_token
         </td>
         <td>
           <div class="ui input">
-            <%= f.text_field :password_confirmation %>
+            <%= f.text_field :reset_password_token %>
           </div>
         </td>
       </tr>
+    
+      <tr>
+        <td class="two wide">
+          reset_password_sent_at
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :reset_password_sent_at %>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="two wide">
+          remember_created_at
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :remember_created_at %>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="two wide">
+          created_at
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :created_at %>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="two wide">
+          updated_at
+        </td>
+        <td>
+          <div class="ui input">
+            <%= f.text_field :updated_at %>
+          </div>
+        </td>
+      </tr>
+    
   </tbody>
 </table>
 

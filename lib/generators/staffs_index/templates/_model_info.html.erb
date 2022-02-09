@@ -1,0 +1,13 @@
+<%% column_list = <%= column_names %> %>
+<table class="ui striped celled table">
+  <tbody>
+  <%- column_names.each do |column| -%>
+  <tr>
+    <td class="three wide"><%= column %></td>
+    <td>
+      <p><%%= <%= typed_column(column) %> %></p>
+    </td>
+  </tr>
+  <%- end -%>
+  </tbody>
+</table>
