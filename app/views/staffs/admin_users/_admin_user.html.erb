@@ -4,9 +4,21 @@
       <input type="checkbox" class="admin_userCheck" id="<%= admin_user.id %>" value="<%= admin_user.id %>">
     </div>
   </td>
-  <% @column_attributes.each do |column| %>
-    <td><%= admin_user[column] %></td>
-  <% end %>
+  <td>
+    <p><%= admin_user.id %></p>
+  </td>
+  <td>
+    <p><%= admin_user.email %></p>
+  </td>
+  <td>
+    <p><%= admin_user.reset_password_token %></p>
+  </td>
+  <td>
+    <p><%= l(admin_user.created_at, format: :short) %></p>
+  </td>
+  <td>
+    <p><%= l(admin_user.updated_at, format: :short) %></p>
+  </td>
   <td>
     <%= link_to '보기', staffs_admin_user_path(admin_user.id), method: :get %>
     <%= link_to '수정', edit_staffs_admin_user_path(admin_user.id), method: :get %>

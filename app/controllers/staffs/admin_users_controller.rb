@@ -3,8 +3,8 @@ class Staffs::AdminUsersController < StaffsController
   before_action :load_comments, only: %I[show]
 
   def index
-    @filter_attributes = ["id", "email"]
-    @column_attributes = ["id", "email", "created_at", "updated_at", "current_sign_in_at", "sign_in_count", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip"]
+    @filter_attributes = ["id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at"]
+    @column_attributes = ["id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at"]
 
     query_result = AdminUserRepository.admin_search(params)
     @q, @admin_users = query_result.values_at(:q, :result)
@@ -29,7 +29,6 @@ class Staffs::AdminUsersController < StaffsController
   end
 
   def update
-    @admin_user.update(admin_user_params)
     redirect_to staffs_admin_users_path
   end
 
@@ -45,7 +44,7 @@ class Staffs::AdminUsersController < StaffsController
     end
 
     def admin_user_params
-      params.require(:admin_user).permit(:email, :password, :password_confirmation)
+      params.require(:admin_user).permit(:id, :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :created_at, :updated_at)
     end
 
     def load_comments
