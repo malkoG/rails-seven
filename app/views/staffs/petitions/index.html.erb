@@ -1,0 +1,17 @@
+<% content_for :title, "petition | PETNER" %>
+
+<div class="main" style="padding: 3rem;">
+  <div class="ui">
+    <h1 class="ui teal image header">petitions</h1>
+    <span class="ui" style="float: right;">
+      <%= link_to 'petition 추가', new_staffs_petition_path, class: "ui button" %>
+    </span>
+  </div>
+
+  <%= render 'filter', counts: @counts %>
+
+  <%= render 'petitions', petitions: @petitions %>
+
+  <%= paginate @petitions %>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="ui seven wide column" style="margin-bottom: 30px;">
+  <table class="ui celled table">
+    <thead>
+      <tr class="center aligned">
+        <th class="collapsing">
+          <div class="ui checkbox">
+            <input type="checkbox" id="checkAll">
+            <label for="checkAll"></label>
+          </div>
+        </th>
+        <% @column_attributes.each do |column| %>
+          <th><%= sortable_header(@q, column, t(column, scope: [:activerecord, :petitions])) %></th>
+        <% end %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% petitions.each do |petition| %>
+      <%= render 'petition', petition: petition %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#checkAll').removeClass('hidden');
+  })
+
+  $(document).on('click', '#checkAll', function() {
+    if ($('#checkAll').prop('checked')) {
+      $('.petitionCheck').prop('checked', true);
+    } else {
+      $('.petitionCheck').prop('checked', false);
+    }
+  });
+</script>

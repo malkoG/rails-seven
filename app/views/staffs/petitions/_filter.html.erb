@@ -1,11 +1,11 @@
 <div class="ui filters" style="margin-bottom: 20px; background-color: white;">
-  <%= search_form_for(@q, url: staffs_admin_users_path, method: :get, class: "ui form", style: "padding-bottom: 10px;") do |f| %>
+  <%= search_form_for(@q, url: staffs_petitions_path, method: :get, class: "ui form", style: "padding-bottom: 10px;") do |f| %>
 
     <!-- 배치 작업 -->
     <div class="field is-horizontal" style="margin-bottom: 20px;">
       <div class="fields list-filter">
         <div class="field six wide">
-          <%= select_tag 'admin_user[status]', options_for_select(['배치 작업', *%w()], selected: "#{params.dig('admin_user', :status).presence || ''}"), class: "ui selection dropdown" %>
+          <%= select_tag 'petition[status]', options_for_select(['배치 작업', *%w()], selected: "#{params.dig('petition', :status).presence || ''}"), class: "ui selection dropdown" %>
         </div>
       </div>
     </div>

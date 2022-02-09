@@ -1,0 +1,53 @@
+<% column_list = ["id", "name", "birthday", "email", "phone", "code", "created_at", "updated_at"] %>
+<table class="ui striped celled table">
+  <tbody>
+  <tr>
+    <td class="three wide">id</td>
+    <td>
+      <p><%= petition.id %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">name</td>
+    <td>
+      <p><%= petition.name %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">birthday</td>
+    <td>
+      <p><%= petition.birthday %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">email</td>
+    <td>
+      <p><%= petition.email %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">phone</td>
+    <td>
+      <p><%= petition.phone %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">code</td>
+    <td>
+      <p><%= petition.code %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">created_at</td>
+    <td>
+      <p><%= l(petition.created_at, format: :short) %></p>
+    </td>
+  </tr>
+  <tr>
+    <td class="three wide">updated_at</td>
+    <td>
+      <p><%= l(petition.updated_at, format: :short) %></p>
+    </td>
+  </tr>
+  </tbody>
+</table>

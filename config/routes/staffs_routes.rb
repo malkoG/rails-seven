@@ -16,9 +16,10 @@ module StaffsRoutes
       get "index" => "staffs/welcome#index"
 
       scope module: "staffs" do
+        staffs_resources :petitions
         # 알파벳 순서로 정리
         staffs_resources :admin_users
-        
+        staffs_resources :petitions
 
         get 'welcome/index'
       end
