@@ -1,0 +1,42 @@
+<tr>
+  <td>
+    <div class="ui checkbox">
+      <input type="checkbox" class="petitionCheck" id="<%= petition.id %>" value="<%= petition.id %>">
+    </div>
+  </td>
+  <td>
+    <p><%= petition.id %></p>
+  </td>
+  <td>
+    <p><%= petition.name %></p>
+  </td>
+  <td>
+    <p><%= petition.birthday %></p>
+  </td>
+  <td>
+    <p><%= petition.email %></p>
+  </td>
+  <td>
+    <p><%= petition.phone %></p>
+  </td>
+  <td>
+    <p><%= petition.code %></p>
+  </td>
+  <td>
+    <p><%= l(petition.created_at, format: :short) %></p>
+  </td>
+  <td>
+    <p><%= l(petition.updated_at, format: :short) %></p>
+  </td>
+  <td>
+    <%= link_to '보기', staffs_petition_path(petition.id), method: :get %>
+    <%= link_to '수정', edit_staffs_petition_path(petition.id), method: :get %>
+    <%= link_to '삭제', staffs_petition_path(petition.id), method: :delete %>
+  </td>
+</tr>
+
+<script type="text/javascript">
+  $('.ui.checkbox')
+    .checkbox()
+  ;
+</script>

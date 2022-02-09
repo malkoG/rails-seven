@@ -4,6 +4,7 @@
       <button class="dropbtn">User</button>
       <div class="dropdown-menu-content">
         <%= link_to 'admin users', staffs_admin_users_path %>
+        <%= link_to 'petitions', staffs_petitions_path %>
       </div>
     </div>
     <% if admin_user_signed_in? %>
