@@ -1,0 +1,8 @@
+{
+    "api_key": "NCS",
+    "api_secret": "SKR",
+    "protocol": "https",
+    "domain": "api.solapi.com",
+    "prefix": "",
+    "from": "01000000000"
+}

@@ -8,7 +8,7 @@ class VerifiedCodeService
   def created_code
     attributes = { phone: phone, code: random_code }
     code = VerifiedCode.create!(attributes)
-    code
+    code.code
   end
 
   def verifying(code)
