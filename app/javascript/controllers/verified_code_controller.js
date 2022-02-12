@@ -16,9 +16,11 @@ export default class extends Controller {
       method: 'post',
       headers: {
         'X-CSRF_Token': token,
+        'X-CSRF-TOKEN': token,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
+      credentials: "same-origin"
     })
     const href = this.newUrlValue + "?phone=" + value
     this.newlinkTarget.setAttribute("href", href)
