@@ -1,0 +1,17 @@
+.ui.secondary.pointing.menu {
+  overflow-x: scroll;
+}
+
+.caret.big {
+  margin-left: -5px;
+  margin-right: -5px;
+  color: black;
+}
+
+.caret.activated {
+  color: #21BA45;
+}
+
+.flex-container {
+  display: flex;
+}
