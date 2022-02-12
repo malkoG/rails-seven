@@ -15,7 +15,6 @@ export default class extends Controller {
     fetch(this.createUrlValue, {
       method: 'post',
       headers: {
-        'X-CSRF_Token': token,
         'X-CSRF-TOKEN': token,
         "Content-Type": "application/json",
       },
