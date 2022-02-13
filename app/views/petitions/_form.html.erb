@@ -14,7 +14,7 @@
       </div>
       <div class="space-y-2">
         <label for="petition_birthday" class="block text-sm font-semibold text-gray-700">생년월일</label>
-        <%= f.text_field :birthday, class: "w-full border-gray-300 rounded-md text-sm" %>
+        <%= f.date_field :birthday, as: :date, class: "w-full border-gray-300 rounded-md text-sm" %>
       </div>
     </div>
   </div>
