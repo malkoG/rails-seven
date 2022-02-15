@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@media screen and (min-width: 360px) {
+  .screen-wrapper {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .screen-wrapper {
+    width: 100%;
+  }
+}
+
 /*
 
 @layer components {
